@@ -28,11 +28,13 @@ var getProductsInfo = function() {
             var product  = `<li class="product">
             <img src="${data[i].image}" alt=""> 
             <h2>${data[i].title}</h2>
+            <p class="productDescription">${data[i].description}</p>
             <span class="price">$${data[i].price}</span>
             <button>Add to Cart</button>
             </li> `;
             console.log(product);
             $("#productList").append(product);
+            $(".productDescription").css("display","none");
           }
         });
 }
