@@ -23,25 +23,15 @@ var getProductsInfo = function() {
         console.log("products Api \n"+response.status);
         return response.json();
     }).then(function (data) {
-<<<<<<< HEAD
-          for(var i = 0; i < 10; i++){
-=======
           for(var i = 0; i < 12; i++){
->>>>>>> d93c6b9a6cc11bd39eb0a6c53765f328b1930210
             var product  = `<li class="product">
             <img src="${data[i].image}" alt=""> 
             <h2>${data[i].title}</h2>
             <p class="productDescription">${data[i].description}</p>
             <span class="price">$${data[i].price}</span>
-<<<<<<< HEAD
-            <button>Add to Cart</button>
-            </li> `;
-            console.log(product);
-=======
             <button class="addToCart" >Add to Cart</button>
             </li> `;
             // console.log(product);
->>>>>>> d93c6b9a6cc11bd39eb0a6c53765f328b1930210
             $("#productList").append(product);
             $(".productDescription").css("display","none");
           }
