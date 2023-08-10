@@ -29,7 +29,7 @@ var getProductsInfo = function() {
             <h2>${data[i].title}</h2>
             <p class="productDescription">${data[i].description}</p>
             <span class="price">$${data[i].price}</span>
-            <button>Add to Cart</button>
+            <button class="addToCart" >Add to Cart</button>
             </li> `;
             // console.log(product);
             $("#productList").append(product);
@@ -39,3 +39,9 @@ var getProductsInfo = function() {
 }
 
 getProductsInfo();
+
+// add functionality, when click on add to cart button it adds to local storage key called cart. 
+$("button").on("click", function(event){
+    event.preventDefault();
+    console.log("added to cart");
+});
