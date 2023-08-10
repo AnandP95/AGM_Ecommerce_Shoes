@@ -1,19 +1,18 @@
 
+var dropdownOptions = [];
 var currencyRates = function(){
-    var inputRequestUrl = "https://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4";
+    var inputRequestUrl = "http://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4";
     fetch(inputRequestUrl)
     .then(function (response) {
         console.log("currency Api \n"+ response.status);
         return response.json();
-    })
-    // .then(function (data) {
-    //   latitude = data.coord.lat;
-    //   longitude = data.coord.lon;
-    //   console.log(latitude);
-    //   console.log(longitude);
-    //   getData(longitude,latitude);
-    //   $(".results").css("display","block");
-    // });
+    }).then(function (data) {
+        // put these values into a dropdown list for the user to choose a currency to change to. 
+        var quotes = Object.keys(data.quotes);
+        for(var i = 0; i < quotes.length; i++){
+            console.log(quotes[i]);
+        }
+    });
 }
 currencyRates();
 
@@ -24,15 +23,25 @@ var getProductsInfo = function() {
         console.log("products Api \n"+response.status);
         return response.json();
     }).then(function (data) {
+<<<<<<< HEAD
           for(var i = 0; i < 10; i++){
+=======
+          for(var i = 0; i < 12; i++){
+>>>>>>> d93c6b9a6cc11bd39eb0a6c53765f328b1930210
             var product  = `<li class="product">
             <img src="${data[i].image}" alt=""> 
             <h2>${data[i].title}</h2>
             <p class="productDescription">${data[i].description}</p>
             <span class="price">$${data[i].price}</span>
+<<<<<<< HEAD
             <button>Add to Cart</button>
             </li> `;
             console.log(product);
+=======
+            <button class="addToCart" >Add to Cart</button>
+            </li> `;
+            // console.log(product);
+>>>>>>> d93c6b9a6cc11bd39eb0a6c53765f328b1930210
             $("#productList").append(product);
             $(".productDescription").css("display","none");
           }
@@ -40,3 +49,9 @@ var getProductsInfo = function() {
 }
 
 getProductsInfo();
+
+// add functionality, when click on add to cart button it adds to local storage key called cart. 
+$("button").on("click", function(event){
+    event.preventDefault();
+    console.log("added to cart");
+});
