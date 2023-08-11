@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart - AGM Shoes</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./Assets/style.css">
 </head>
 <body>
@@ -28,9 +29,27 @@
             <h3>Total: <span id="cart-total">$0.00</span></h3>
             <button id="checkout-button">Checkout</button>
         </section>
+        <section class="currency">
+            <label for="currency">Select a currency</label>
+            <select name="currency" id="currencyOptions">
+                <option value="USDUSD $"> United States dollar</option>
+                <option value="USDAUD $">Australian dollar</option>
+                <option value="USDEUR €">Euro</option>
+                <option value="USDGBP £">Sterling</option>
+                <option value="USDPLN zł">Polish złoty</option>
+                <option value="USDEGP £">Egyptian pound</option>
+                <option value="USDILS ₪">Israeli new shekel</option>
+                <option value="USDBGN лв">Bulgarian lev</option>
+                <option value="USDCOP $">Colombian peso</option>
+            </select>
+            <button id="convertCurrency">change currency</button>
+        </section>
     </main>
     <footer>
         <p>&copy; 2023 AGM-Shoes All rights reserved</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="assets/cart.js"></script>
 </body>
 </html>
