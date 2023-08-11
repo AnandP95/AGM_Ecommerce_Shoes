@@ -17,9 +17,19 @@ header {
     padding: 10px;
     text-align: center;
     
+    align-items: center;
+    
+}
+
+
+.logo img {
+    width:200px;
+    height:100px;
 }
 h1 {
     font-size: 55px;
+    margin-left: 25px;
+    
 }
 
 nav ul {
