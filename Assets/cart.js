@@ -2,7 +2,8 @@
 
 $(function(){
     var currencyConverter = function(country,symbol){
-        var inputRequestUrl = "http://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4&currencies=AUD,EUR,GBP,PLN,EGP,ILS,BGN,COP";
+        var inputRequestUrl = "http://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4";
+        //&currencies=AUD,EUR,GBP,PLN,EGP,ILS,BGN,COP
         fetch(inputRequestUrl)
         .then(function (response) {
             return response.json();
