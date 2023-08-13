@@ -206,3 +206,10 @@ button {
     }
 }
 
+h6 {
+    color: tomato;
+}
+
+li>a>h6 {
+    display: inline;
+}

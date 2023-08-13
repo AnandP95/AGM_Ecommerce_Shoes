@@ -1,21 +1,49 @@
+$(function(){
+    var getProductsInfo = function() {
+        var inputRequestUrl = "https://fakestoreapi.com/products";
+        fetch(inputRequestUrl)
+        .then(function (response) {
+            console.log("products Api \n"+response.status);
+            return response.json();
+        }).then(function (data) {
+              for(var i = 8; i < 20; i++){
+                var price = Intl.NumberFormat("symbol", {
+                    style: "currency",
+                    currency: "USD"
+                    }).format(data[i].price);
+                var product  = `<li class="product">
+                <img src="${data[i].image}" alt=""> 
+                <h2>${data[i].title}</h2>
+                <p class="productDescription">${data[i].description}</p>
+                <span class="price">${price}</span>
+                <button class="addToCart" >Add to Cart</button>
+                </li> `;
+                // console.log(product);
+                $("#productList").append(product);
+                $(".productDescription").css("display","none");
+              }
+            });
+    }
+    
+    getProductsInfo();
+    
+    // add functionality, when click on add to cart button it adds to local storage key called cart. 
+    $(document).on("click", ".addToCart", function(){
+        console.log("added to cart");
+        var cart = JSON.parse(localStorage.getItem("shoppingCart"))||[];
 
-var dropdownOptions = [];
-var currencyRates = function(){
-    var inputRequestUrl = "http://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4";
-    fetch(inputRequestUrl)
-    .then(function (response) {
-        console.log("currency Api \n"+ response.status);
-        return response.json();
-    }).then(function (data) {
-        // put these values into a dropdown list for the user to choose a currency to change to. 
-        var quotes = Object.keys(data.quotes);
-        for(var i = 0; i < quotes.length; i++){
-            console.log(quotes[i]);
-        }
-    });
-}
-currencyRates();
+        var product = $(this).parents('.product');
+        console.log(product);
+        cart.push(
+            {
+                image: product.children('img').attr('src'),
+                title: product.children('h2').text(),
+                discription: product.children('p').text(),
+                price: product.children('span').text()
+            }
+        )
 
+<<<<<<< HEAD
 var getProductsInfo = function() {
     var inputRequestUrl = "https://fakestoreapi.com/products";
     fetch(inputRequestUrl)
@@ -47,3 +75,12 @@ $("button").on("click", function(event){
 });
 
 
+=======
+        var amountInCart = cart.length;
+        // shows the amount of products in the cart next to the cart button in the nav bar
+        $('#itemsInCart').text(amountInCart).css('color', 'tomato');
+        localStorage.setItem("shoppingCart", JSON.stringify(cart));
+        console.log(cart);
+      });
+})
+>>>>>>> c39112b32b253309a575d21a82cfb58725d62b01
