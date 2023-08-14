@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
     <link rel="stylesheet" href="./Assets/cart.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <title>Your Cart - AGM Shoes</title>
     <link rel="stylesheet" href="./Assets/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -20,7 +21,6 @@
                     <li><a href="index.html">Home</a></li>
                      <li><a href="#trackOrder">Track Order</a></li>
                      <li><a href="cart.html">Cart</a></li>
-                     
                      <li><a href="">About Us</a></li>
                  </ul>
              </nav>
@@ -35,9 +35,8 @@
                 <li class="cart-header">
                     <div class="product-name">Product</div>
                     <div class="quantity">Quantity</div>
-                    
-                    
                     <div class="item-total">Item Total</div>
+                    
                 </li>
                
                 
@@ -45,6 +44,9 @@
             <h4 id="cart-total">Total: $0.00</h4>
         </section>
         
+
+
+
 
         <section class="currency">
             <label for="currency">Select a currency</label>
@@ -61,14 +63,12 @@
             </select>
             <button id="convertCurrency">change currency</button>
         </section>
-
-
-
     </main>
     <footer>
         <p>&copy; 2023 AGM Shop Right All rights reserved</p>
     </footer>
     <script src="Assets/cart.js"></script>
-    <script src="Assets/product-cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </body>
 </html>
