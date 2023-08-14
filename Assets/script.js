@@ -43,7 +43,7 @@ $(function(){
             }
         )
 
-<<<<<<< HEAD
+
 var getProductsInfo = function() {
     var inputRequestUrl = "https://fakestoreapi.com/products";
     fetch(inputRequestUrl)
@@ -75,7 +75,7 @@ $("button").on("click", function(event){
 });
 
 
-=======
+
         var amountInCart = cart.length;
         // shows the amount of products in the cart next to the cart button in the nav bar
         $('#itemsInCart').text(amountInCart).css('color', 'tomato');
@@ -83,4 +83,3 @@ $("button").on("click", function(event){
         console.log(cart);
       });
 })
->>>>>>> c39112b32b253309a575d21a82cfb58725d62b01
