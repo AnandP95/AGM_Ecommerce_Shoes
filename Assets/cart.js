@@ -1,6 +1,5 @@
 
 
-<<<<<<< HEAD
 $(document).ready(function() {
   var   cartItemsList = $("#cart-items");
   var cartTotal = $("#cart-total");
@@ -9,29 +8,36 @@ $(document).ready(function() {
 
   
   /*  Display items in the cart */
-storedCart.forEach(item => {
-  var cartItemEl= $("<li>");
+    storedCart.forEach(item => {
+        var cartItemEl= $("<li>");
 
- 
+        var titleArray = item.title.split(' ');
+        if (titleArray.length >= 3){
+            var title = `${titleArray[0]} ${titleArray[1]} ${titleArray[2]}...`;
+        }else{
+            var title = item.title;
+        }
+        console.log(title);
+        var  nameEl = $("<span>").text(title);
+        cartItemEl.append(nameEl);
 
- var  nameEl = $("<span>").text(item.name);
-  cartItemEl.append(nameEl);
+        var  quantityEl = $("<span>").text(` ${item.quantity}`);
+        cartItemEl.append(quantityEl);
 
-     var  quantityEl = $("<span>").text(` ${item.quantity}`);
-  cartItemEl.append(quantityEl);
+        var price = item.price;
+        price = price.slice(1, price.length-1);
+        console.log(price);
+        var  priceEl = $("<span>").text(`$${(price * item.quantity).toFixed(2)}`);
+        cartItemEl.append(priceEl);
 
-  var  priceEl = $("<span>").text(`$${(item.price * item.quantity).toFixed(2)}`);
-  cartItemEl.append(priceEl);
-
-  cartItemsList.append(cartItemEl);
-});
+        cartItemsList.append(cartItemEl);
+    });
 
 
   /* Calculate and display total price */
-  var  total = storedCart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  var  total = storedCart.reduce((acc, item) => acc + item.price.slice(1, item.price.length-1) * item.quantity, 0);
   cartTotal.text(`Total: $${total.toFixed(2)}`);
 });
-=======
 $(function(){
     var currencyConverter = function(country,symbol){
         var inputRequestUrl = "http://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4";
@@ -89,4 +95,3 @@ $(function(){
 
 
 
->>>>>>> c39112b32b253309a575d21a82cfb58725d62b01

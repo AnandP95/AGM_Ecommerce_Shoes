@@ -205,11 +205,3 @@ button {
         padding: 5px;
     }
 }
-
-h6 {
-    color: tomato;
-}
-
-li>a>h6 {
-    display: inline;
-}
