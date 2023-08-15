@@ -71,7 +71,7 @@ $(function(){
     // it will only reset the value of the price in the html not in the local starage
     // that way if the user chooses another country to change currency again 
     // we still have the USD prices in the local storage. 
-
+    // var currencyMath = function
 
     //creates the dropdown menu functionality
     $("#currencyOptions").selectmenu().selectmenu( "menuWidget" ).addClass( "overflow" );
