@@ -1,0 +1,74 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/cart.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <title>Your Cart - AGM Shoes</title>
+    <link rel="stylesheet" href="./Assets/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="#"><img src="Assets/Images/logo-no-background.png" alt="AGM Shop Right"></a> AGM Shop Right</h1>
+         </div>
+             <nav>
+                 <ul>
+                    <li><a href="index.html">Home</a></li>
+                     <li><a href="#trackOrder">Track Order</a></li>
+                     <li><a href="cart.html">Cart</a></li>
+                     <li><a href="">About Us</a></li>
+                 </ul>
+             </nav>
+    </header>
+    <main>
+        
+        
+        <section class="cart">
+            <h3>Your Cart</h3>
+            <ul id="cart-items">
+                
+                <li class="cart-header">
+                    <div class="product-name">Product</div>
+                    <div class="quantity">Quantity</div>
+                    <div class="item-total">Item Total</div>
+                    
+                </li>
+               
+                
+            </ul>
+            <h4 id="cart-total">Total: $0.00</h4>
+        </section>
+        
+
+
+
+
+        <section class="currency">
+            <label for="currency">Select a currency</label>
+            <select name="currency" id="currencyOptions">
+                <option value="USDUSD $"> United States dollar</option>
+                <option value="USDAUD $">Australian dollar</option>
+                <option value="USDEUR €">Euro</option>
+                <option value="USDGBP £">Sterling</option>
+                <option value="USDPLN zł">Polish złoty</option>
+                <option value="USDEGP £">Egyptian pound</option>
+                <option value="USDILS ₪">Israeli new shekel</option>
+                <option value="USDBGN лв">Bulgarian lev</option>
+                <option value="USDCOP $">Colombian peso</option>
+            </select>
+            <button id="convertCurrency">change currency</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 AGM Shop Right All rights reserved</p>
+    </footer>
+    <script src="Assets/cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</body>
+</html>
