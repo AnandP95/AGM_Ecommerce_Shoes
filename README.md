@@ -4,7 +4,7 @@
 An ecommerce website where customers can choose products to add to their cart and view their shopping cart.
 
 ## Installation
-link to deployed application: 
+link to deployed application: https://anandp95.github.io/AGM_Ecommerce_Shoes/
 
 ## Usage
 The customer chooses items to add to his cart. 
