@@ -4,13 +4,23 @@
 $(document).ready(function() {
 
     /* select elements using Jquery*/
+
+    /* select the cart items list*/ 
     var cartItemsList = $("#cart-items");
+
+    /* select the cart total element*/ 
     var cartTotal = $("#cart-total");
+
+    /* Retrieve the data from local storage */ 
     var storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     
+    /* set a function to update the cart */ 
     function updateCart() {
+
+        /* clear the cart items previous list*/ 
         cartItemsList.empty();
   
+        /* Set a loop for the stored the cart*/ 
       storedCart.forEach(item => {
         var cartItemEl = $("<li>");
   
@@ -26,6 +36,7 @@ $(document).ready(function() {
           max: 50,
           value: item.quantity
         }).on("input", function() {
+            /* set a  update quantity when quantity changes */ 
           item.quantity = parseInt($(this).val());
           updateCart();
         });
@@ -39,6 +50,8 @@ $(document).ready(function() {
         cartItemsList.append(cartItemEl);
       });
   
+
+      /* calculate and display the all items including total into the cart*/ 
       var total = storedCart.reduce((acc, item) => acc + parseFloat(item.price.slice(1)) * item.quantity, 0);
       cartTotal.text(`Total: $${total.toFixed(2)}`);
     }
