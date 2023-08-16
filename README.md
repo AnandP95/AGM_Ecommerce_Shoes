@@ -41,8 +41,12 @@ Welcome to the AGM Shop Right.Founded in 2023 by a Anand,Malka and Matthew . Thi
 
 
 ## Installation
+<<<<<<< HEAD
 
 For doing this challenges , first i install the VS Code developer tool to edit and modify the starter code. 
+=======
+link to deployed application: https://anandp95.github.io/AGM_Ecommerce_Shoes/
+>>>>>>> b585b4bcc026cc7e73a024df34558cbc480f284b
 
 ## Usage
 
