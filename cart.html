@@ -27,27 +27,34 @@
     </header>
     <main>
         
-        
+        <!--Cart section start here -->
         <section class="cart">
             <h3>Your Cart</h3>
+            <!--Cart Item Title-->
+            <ul class="product_title">
+                <li>Product</li>
+                <li>Quantity</li>
+                <li>Item Total</li>
+              </ul>
+
+              <!--Cart Items list displayed here-->
             <ul id="cart-items">
                 
                 <li class="cart-header">
-                    <div class="product-name">Product</div>
-                    <div class="quantity">Quantity</div>
-                    <div class="item-total">Item Total</div>
+                    <div class="product-name"></div>
+                    <div class="quantity"></div>
+                    <div class="item-total"></div>
                     
                 </li>
-               
-                
-            </ul>
+               </ul>
+               <!--Cart total -->
             <h4 id="cart-total">Total: $0.00</h4>
         </section>
         
 
 
 
-
+       <!--Currency conversion section start here-->
         <section class="currency">
             <label for="currency">Select a currency</label>
             <select name="currency" id="currencyOptions">
@@ -68,6 +75,8 @@
         <p>&copy; 2023 AGM Shop Right All rights reserved</p>
     </footer>
     <script src="Assets/cart.js"></script>
+    <script src="Assets/shopping.js"></script>
+    <script src="Assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </body>
