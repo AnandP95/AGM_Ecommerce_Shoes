@@ -1,16 +1,5 @@
 
-
-## Credits
-Anand Patel
-
-Matthew Trucco
-
-Malka Greenberg
-
 # AGM_Shop_Right
-
-
-
 
 
 
@@ -27,7 +16,8 @@ Welcome to the AGM Shop Right.Founded in 2023 by a Anand,Malka and Matthew . Thi
   - [Features](#features)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits-1)
+  - [Credits](#credits)
+  - [Team Members](#team-members)
   - [view concept](#view-concept)
   - [License](#license)
 
@@ -63,8 +53,9 @@ For doing this challenges , first i install the VS Code developer tool to edit a
 4. When the cart button, in the navbar, is clicked the customer is taken to their shopping cart, where they can view the items in their cart with a total price calculated.
 5. The customer then has the option to change the quantity of the products in the cart. Or to delete a product from the cart. 
 6. The customer then has the option to change the currency, after choosing a currency the prices of each product, as well as the total price will be adjusted accordingly.
- 7. here is demo of app : ![AGM Shop_Right  ](Assets/Images/sreenshot1.PNG)
- 8. ![AGM Shop_Right  ](Assets/Images/screenshot2.PNG)
+ 7. here is demo of app :
+    ![AGM Shop_Right  ](Assets/Images/sreenshot1.PNG)
+    ![AGM Shop_Right  ](Assets/Images/screenshot2.PNG)
 
 
 
@@ -76,7 +67,14 @@ For doing this challenges , first i install the VS Code developer tool to edit a
 
 
 
-* in this website, We  learned a how to fetch the data.[https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch] 
+* In this website, We  learned a how to fetch the data.[https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch] 
+
+## Team Members
+Anand Patel
+
+Matthew Trucco
+
+Malka Greenberg
  
  ## view concept 
  
