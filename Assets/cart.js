@@ -1,43 +1,71 @@
 
 
+
 $(document).ready(function() {
+<<<<<<< HEAD
+
+    /* select elements using Jquery*/
+
+    /* select the cart items list*/ 
+    var cartItemsList = $("#cart-items");
+
+    /* select the cart total element*/ 
+=======
     var   cartItemsList = $("#cart-items");
+>>>>>>> b585b4bcc026cc7e73a024df34558cbc480f284b
     var cartTotal = $("#cart-total");
-  
+
+    /* Retrieve the data from local storage */ 
     var storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-  
     
-    /*  Display items in the cart */
+    /* set a function to update the cart */ 
+    function updateCart() {
+
+        /* clear the cart items previous list*/ 
+        cartItemsList.empty();
+  
+        /* Set a loop for the stored the cart*/ 
       storedCart.forEach(item => {
-          var cartItemEl= $("<li>");
+        var cartItemEl = $("<li>");
   
-          var titleArray = item.title.split(' ');
-          if (titleArray.length >= 3){
-              var title = `${titleArray[0]} ${titleArray[1]} ${titleArray[2]}...`;
-          }else{
-              var title = item.title;
-          }
-          console.log(title);
-          var  nameEl = $("<span>").text(title);
-          cartItemEl.append(nameEl);
+        var titleArray = item.title.split(' ');
+        var title = titleArray.length >= 3 ? `${titleArray[0]} ${titleArray[1]} ${titleArray[2]}...` : item.title;
+        var nameEl = $("<span>").text(title);
+        cartItemEl.append(nameEl);
   
-          var  quantityEl = $("<span>").text(` ${item.quantity}`);
-          cartItemEl.append(quantityEl);
+        var quantityEl = $("<input>").attr({
+          class: "product__quantity",
+          type: "number",
+          min: 1,
+          max: 50,
+          value: item.quantity
+        }).on("input", function() {
+            /* set a  update quantity when quantity changes */ 
+          item.quantity = parseInt($(this).val());
+          updateCart();
+        });
   
-          var price = item.price;
-          price = price.slice(1, price.length-1);
-          console.log(price);
-          var  priceEl = $("<span>").text(`$${(price * item.quantity).toFixed(2)}`);
-          cartItemEl.append(priceEl);
+        cartItemEl.append(quantityEl);
   
-          cartItemsList.append(cartItemEl);
+        var price = parseFloat(item.price.slice(1));
+        var priceEl = $("<span>").text(`$${(price * item.quantity).toFixed(2)}`);
+        cartItemEl.append(priceEl);
+  
+        cartItemsList.append(cartItemEl);
       });
   
+
+      /* calculate and display the all items including total into the cart*/ 
+      var total = storedCart.reduce((acc, item) => acc + parseFloat(item.price.slice(1)) * item.quantity, 0);
+      cartTotal.text(`Total: $${total.toFixed(2)}`);
+    }
   
-    /* Calculate and display total price */
-    var  total = storedCart.reduce((acc, item) => acc + item.price.slice(1, item.price.length-1) * item.quantity, 0);
-    cartTotal.text(`Total: $${total.toFixed(2)}`);
+    updateCart();
   });
+  
+
+
+
   $(function(){
       var currencyConverter = function(country,symbol){
           var inputRequestUrl = "http://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4";
@@ -94,4 +122,8 @@ $(document).ready(function() {
   })
   
   
+<<<<<<< HEAD
   
+=======
+  
+>>>>>>> b585b4bcc026cc7e73a024df34558cbc480f284b

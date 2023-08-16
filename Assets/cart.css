@@ -1,4 +1,4 @@
-
+/* Set the body font family as arial, sans serif. */
 
 body {
     font-family: Arial, sans-serif;
@@ -6,6 +6,8 @@ body {
     padding: 0;
   }
   
+
+  /* set the header styles*/
   #cart-items li.cart-header {
     display: flex;
     justify-content: space-between;
@@ -22,11 +24,13 @@ body {
   }
   
 
+
  
   main {
     padding: 20px;
   }
   
+    /*cart section styles */
   .cart {
     border: 1px solid #ddd;
     padding: 20px;
@@ -39,11 +43,13 @@ body {
     margin-bottom: 15px;
   }
   
+    /*cart items list styles*/
   #cart-items {
     list-style: none;
     padding: 0;
   }
   
+ 
   #cart-items li {
     display: flex;
     justify-content: space-between;
@@ -52,6 +58,7 @@ body {
     padding: 10px 0;
   }
   
+    /*Remove border from last cart item*/
   #cart-items li:last-child {
     border-bottom: none;
   }
@@ -68,3 +75,47 @@ body {
     text-align: right;
   }
   
+    /* Set a main title Font size.  */
+  h3 {
+    text-align: center;
+    font-size: 40px;
+    
+  }
+  .product_title  {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+
+  /* Responsive layout for smaller screens */
+@media screen and (max-width: 768px) {
+  #cart-items li.cart-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  #cart-items li.cart-header .product-name,
+  #cart-items li.cart-header .quantity,
+  #cart-items li.cart-header .item-total {
+      flex: 1;
+  }
+
+  #cart-items img {
+      max-width: 60px;
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
