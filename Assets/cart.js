@@ -2,7 +2,7 @@
 
 
 $(document).ready(function() {
-<<<<<<< HEAD
+
 
     /* select elements using Jquery*/
 
@@ -10,9 +10,9 @@ $(document).ready(function() {
     var cartItemsList = $("#cart-items");
 
     /* select the cart total element*/ 
-=======
+
     var   cartItemsList = $("#cart-items");
->>>>>>> b585b4bcc026cc7e73a024df34558cbc480f284b
+
     var cartTotal = $("#cart-total");
 
     /* Retrieve the data from local storage */ 
@@ -122,8 +122,5 @@ $(document).ready(function() {
   })
   
   
-<<<<<<< HEAD
-  
-=======
-  
->>>>>>> b585b4bcc026cc7e73a024df34558cbc480f284b
+
+
