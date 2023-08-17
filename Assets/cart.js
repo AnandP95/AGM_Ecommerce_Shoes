@@ -1,6 +1,6 @@
+var number = 0;
 
-
-
+var priceList =[];
 $(document).ready(function() {
 
 
@@ -23,6 +23,7 @@ $(document).ready(function() {
 
         /* clear the cart items previous list*/ 
         cartItemsList.empty();
+       
   
         /* Set a loop for the stored the cart*/ 
       storedCart.forEach(item => {
@@ -48,7 +49,8 @@ $(document).ready(function() {
         cartItemEl.append(quantityEl);
   
         var price = parseFloat(item.price.slice(1));
-        var priceEl = $("<span>").text(`$${(price * item.quantity).toFixed(2)}`);
+        var priceEl = `<span id='${number}'> $${(price * item.quantity).toFixed(2)} </span>`;
+        number++;
         cartItemEl.append(priceEl);
   
         cartItemsList.append(cartItemEl);
@@ -68,7 +70,7 @@ $(document).ready(function() {
 
   $(function(){
       var currencyConverter = function(country,symbol){
-          var inputRequestUrl = "http://api.currencylayer.com/live?access_key=8ee7c486fccf59cf7db683a14a0f03c4";
+          var inputRequestUrl = "https://api.currencylayer.com/live?access_key=2de5719aa0cdcbaca71c4f4a02eac6e1";
           //&currencies=AUD,EUR,GBP,PLN,EGP,ILS,BGN,COP
           fetch(inputRequestUrl)
           .then(function (response) {
@@ -89,16 +91,36 @@ $(document).ready(function() {
               console.log(rate);
               // once we have the rate we can do the math. 
               // TODO: call the function that will do the math for us
-              
+              currencyMath(rate, symbol);
           });
       }
   
-      // TODO: create function to do the math. 
-      // it will get the prices from the local storage
-      //  and for each one mult by the rate that was taken in as a perameter
-      // it will only reset the value of the price in the html not in the local starage
-      // that way if the user chooses another country to change currency again 
-      // we still have the USD prices in the local storage. 
+     
+      var currencyMath = function(rate,symbol){
+
+         // does the math for each item in the cart
+        for(var i = 0; i < number; i++){
+          var price = $(`#${i}`).text();
+          price = parseFloat(price.slice(2));
+          price = (price * rate).toFixed(2);
+          console.log(price * rate);
+          // resets the price tag in the html 
+          $(`#${i}`).text(`${symbol} ${price}`);
+        }
+        
+        // does math for the total price
+        var total = $("#cart-total").text();
+        total = parseFloat(total.slice(8));
+        console.log(total);
+        total = (total * rate).toFixed(2);
+        console.log(total * rate);total
+        $("#cart-total").text(`${symbol} ${total}`);
+        
+        //note that in if you change the quantity after a curren
+        $( "#warning" ).dialog({
+          modal: true
+        });
+      } 
   
   
       //creates the dropdown menu functionality
