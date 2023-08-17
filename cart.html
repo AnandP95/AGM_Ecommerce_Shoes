@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
     <link rel="stylesheet" href="./Assets/cart.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <title>Your Cart - AGM Shoes</title>
@@ -51,6 +51,16 @@
                <!--Cart total -->
             <h4 id="cart-total">Total: $0.00</h4>
         </section>
+
+        <!-- modal for warning to reload before another currency change -->
+        <dialog id="warning">
+              <p>
+                If you would like to change the currency again you must first reload the page.
+              </p>
+              <p>
+                If you would like to change the quantity of any item in the cart do so and then hit the change currency button again. 
+              </p>
+          </dialog>
         
 
 
